@@ -14,6 +14,7 @@
 
 #include "riscv_semantic_functions/rv32i_instructions.h"
 
+#include <cstdint>
 #include <functional>
 #include <iostream>
 
@@ -142,7 +143,7 @@ void RV32IBlt(Instruction *instruction) {
 }
 
 void RV32IBltu(Instruction *instruction) {
-  BranchConditional<uint32_t>(instruction
+  BranchConditional<uint32_t>(instruction,
                               [](uint32_t a, uint32_t b) { return a < b; });
 }
 
